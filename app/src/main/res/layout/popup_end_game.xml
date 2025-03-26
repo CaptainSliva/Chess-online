@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/padding_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_game_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/padding_view"
+            app:layout_constraintStart_toStartOf="@+id/padding_view"
+            app:layout_constraintTop_toTopOf="@+id/padding_view">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_league"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textSize="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/padding_view"
+            app:layout_constraintStart_toStartOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_game_result" />
+
+        <TextView
+            android:id="@+id/tv_itog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/points_for_win" />
+
+        <TextView
+            android:id="@+id/tv_rang_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_itog" />
+
+        <TextView
+            android:id="@+id/tv_farm_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_league" />
+
+        <TextView
+            android:id="@+id/points_for_win"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_farm_points" />
+
+
+        <TextView
+            android:id="@+id/tv_desc_itog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/itog"
+            app:layout_constraintStart_toStartOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/points_for_win" />
+
+        <TextView
+            android:id="@+id/tv_desc_rang_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/rang_points"
+            app:layout_constraintStart_toStartOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_itog" />
+
+        <TextView
+            android:id="@+id/tv_desc_farm_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/farm_points"
+            app:layout_constraintStart_toStartOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_league" />
+
+        <TextView
+            android:id="@+id/tv_desc_points_for_win"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/win_points"
+            app:layout_constraintStart_toStartOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_farm_points" />
+
+        <Button
+            android:id="@+id/b_exit"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/blue_button"
+            android:text="Ок"
+            android:textColor="@color/white"
+            android:layout_marginTop="32dp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/padding_view"
+            app:layout_constraintEnd_toEndOf="@+id/padding_view"
+            app:layout_constraintStart_toStartOf="@+id/padding_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_desc_rang_points" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

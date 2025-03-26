@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_names">
+        <item>Classic</item>
+        <item>Rapid</item>
+        <item>Blitz</item>
+        <item>Bullet</item>
+    </string-array>
+</resources>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Activities.MainActivity">
+
+    <View
+        android:id="@+id/padding_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </View>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/public_games"
+        android:textColor="@color/light_black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/view6">
+
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_listgames"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="2dp"
+        android:background="@color/back_items"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/b_war"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/blue_button"
+        android:text="@string/go_war"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/padding_view"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/gray_with_drop_shadow_and_corners"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gamename" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/gray_with_corners"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_level" />
+
+    <TextView
+        android:id="@+id/tv_gamename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_name"
+        android:textColor="@color/blue"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/padding_view" />
+
+    <TextView
+        android:id="@+id/tv_league"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Пешечник"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/tv_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="100dp"
+        android:text="@string/level"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:maxWidth="100dp"
+        android:text="00"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/view5" />
+
+    <ImageButton
+        android:id="@+id/ib_settings"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@null"
+        android:src="@drawable/settings"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_gamename"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/padding_view" />
+
+    <Button
+        android:id="@+id/b_create_game"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/blue_button"
+        android:text="@string/create_game"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintStart_toStartOf="@+id/view6" />
+
+    <Button
+        android:id="@+id/b_join"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/blue_button"
+        android:text="@string/join_game"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintEnd_toEndOf="@+id/view6" />
+
+
+    <ImageButton
+        android:id="@+id/refresh_games"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/blue_button"
+        android:src="@drawable/baseline_sync_32"
+        app:layout_constraintBottom_toBottomOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        app:srcCompat="@drawable/baseline_star_24" />
+
+    <Button
+        android:id="@+id/b_friends"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/blue_button"
+        android:text="@string/friends"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/b_prekols"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/blue_button"
+        android:text="@string/prekols"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/b_archive"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/blue_button"
+        android:text="@string/archive"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="16dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/rv_listgames" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

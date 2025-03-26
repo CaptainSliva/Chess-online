@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    android:layout_width="300dp"
+    android:layout_height="250dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <View
+        android:id="@+id/padding_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="@string/invite_desc"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/padding_view" />
+
+    <EditText
+        android:id="@+id/et_game_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/game_code"
+        android:inputType="text"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/b_join"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/b_join"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="@string/join_game"
+        android:background="@drawable/blue_button"
+        app:backgroundTint="@null"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/padding_view"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

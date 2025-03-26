@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.ChessActivity">
+
+    <View
+        android:id="@+id/padding_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </View>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:background="@drawable/gray_with_corners"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/padding_view">
+
+    </View>
+
+    <TextView
+        android:id="@+id/tv_game_name"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/padding_view">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_game_time"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/b_game_end"
+        app:layout_constraintStart_toEndOf="@+id/tv_game_name"
+        app:layout_constraintTop_toTopOf="@+id/padding_view">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/b_game_end"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:background="@drawable/gray_button"
+        android:text="@string/stop"
+        android:textColor="@color/super_red"
+        android:textSize="11dp"
+        android:layout_marginEnd="2dp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/padding_view">
+
+    </Button>
+
+    <HorizontalScrollView
+        android:id="@+id/horizsc"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:minHeight="360dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/b_steps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants">
+
+                    <GridView
+                        android:id="@+id/gv_game_square"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:nestedScrollingEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="@+id/rv_game_figures"
+                        app:layout_constraintEnd_toEndOf="@+id/rv_game_figures"
+                        app:layout_constraintStart_toStartOf="@+id/rv_game_figures"
+                        app:layout_constraintTop_toTopOf="@+id/rv_game_figures">
+
+                    </GridView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_game_figures"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gray_with_corners"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintEnd_toEndOf="@+id/tv_king_killed"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/tv_points">
+
+    </View>
+    <TextView
+        android:id="@+id/tv_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/points"
+        android:paddingVertical="2dp"
+        android:layout_marginStart="2dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/linear_join_request" />
+
+    <TextView
+        android:id="@+id/tv_destroyed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/destroyed"
+        android:paddingVertical="2dp"
+        android:layout_marginStart="2dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_points" />
+
+    <ImageView
+        android:id="@+id/p1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/pawn"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/tv_destroyed"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed"
+        app:tint="@color/light_black">
+    </ImageView>
+    <ImageView
+        android:id="@+id/p2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/horse"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/tv_pawn_killed"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed"
+        app:tint="@color/light_black">
+    </ImageView>
+    <ImageView
+        android:id="@+id/p3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/elephant"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/tv_horse_killed"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed"
+        app:tint="@color/light_black">
+    </ImageView>
+    <ImageView
+        android:id="@+id/p4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/castle"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/tv_elephant_killed"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed"
+        app:tint="@color/light_black">
+    </ImageView>
+    <ImageView
+        android:id="@+id/p5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/queen"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/tv_castle_killed"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed"
+        app:tint="@color/light_black">
+    </ImageView>
+    <ImageView
+        android:id="@+id/p6"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/king"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/tv_queen_killed"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed"
+        app:tint="@color/light_black">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tv_pawn_killed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/p1"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_horse_killed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/p2"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_elephant_killed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/p3"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_castle_killed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/p4"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_queen_killed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/p5"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_king_killed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:paddingEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_destroyed"
+        app:layout_constraintStart_toEndOf="@+id/p6"
+        app:layout_constraintTop_toTopOf="@+id/tv_destroyed">
+
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_players_info"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/padding_view"
+        app:layout_constraintEnd_toStartOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/b_steps" />
+
+    <TextView
+        android:id="@+id/tv_for_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_transparant"
+        android:gravity="center"
+        android:text="5"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/padding_view"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toTopOf="@+id/padding_view" />
+
+    <LinearLayout
+        android:id="@+id/linear_join_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/gray_with_corners"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/padding_view"
+        app:layout_constraintTop_toBottomOf="@+id/view2">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/get_player"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/view3"
+            app:layout_constraintTop_toTopOf="@+id/get_player_name" />
+
+        <TextView
+            android:id="@+id/tv_player_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toTopOf="@+id/view3" />
+
+        <Button
+            android:id="@+id/b_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/yes"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/b_no"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/super_red"
+            android:text="@string/no"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/b_get"
+            app:layout_constraintTop_toBottomOf="@+id/get_player_name" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_text_game_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="@string/game_id"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/padding_view"
+        app:layout_constraintEnd_toStartOf="@+id/tv_game_id">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_game_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sadasdasd"
+        android:textColor="@color/black"
+        android:textIsSelectable="true"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/padding_view"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_color"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_text_game_id"
+        app:layout_constraintStart_toStartOf="@+id/tv_text_game_id">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/iv_player_color"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="4dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="@+id/textView11">
+
+    </ImageView>
+
+    <Button
+        android:id="@+id/b_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:background="@drawable/blue_button"
+        android:text="@string/steps"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="@+id/padding_view"
+        app:layout_constraintStart_toStartOf="@+id/textView11" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">Chess-online</string>
+
+    //main
+    <string name="public_games">Публичные игры</string>
+    <string name="game_name">Chess-online</string>
+    <string name="level">Уровень:\u0020</string>
+    <string name="score">Очков:\u0020</string>
+    <string name="coop">Кооператив</string>
+    <string name="create_game">Создать игру</string>
+    <string name="join_game">Присоединиться</string>
+    <string name="play">Играть</string>
+    <string name="game_type">Тип:\u0020</string>
+    <string name="players_count">\u0020игрока</string>
+    <string name="players">Игроков:\u0020</string>
+    <string name="friends">Друзья</string>
+    <string name="prekols">Зелья</string>
+    <string name="archive">Архив</string>
+    <string name="server_alarm_bold">Не удается подключиться к серверу</string>
+    <string name="server_alarm_info">Повтор через 3 сек</string>
+    <string name="server_error_bold">Не удается подключиться к серверу</string>
+    <string name="go_war">В БОЙ!</string>
+    <string name="logout">Выйти</string>
+    <string name="change_password">Сменить пароль</string>
+    <string name="account_delete">Удалить аккаунт</string>
+
+
+    //popup create
+    <string name="create">Создать</string>
+    <string name="create_desc">Создание игры</string>
+    <string name="name_game">Название:\u0020</string>
+    <string name="value_of_players">Игроков:\u0020</string>
+    <string name="private_game">Приватная игра:</string>
+    <string name="prekol">Зелья:</string>
+
+
+    //popup invite
+    <string name="invite_desc"><h1>Присоединение\nк игре</h1></string>
+    <string name="game_code">Код игры</string>
+
+
+    //popup change password
+    <string name="old_password">Старый пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="submit">Подтвердить</string>
+
+
+    //popup end game
+    <string name="win">ПОБЕДА</string>
+    <string name="lose">ПОРАЖЕНИЕ</string>
+    <string name="farm_points">Заработано очков:</string>
+    <string name="win_points">Начислено за победу:</string>
+    <string name="itog">Итого:</string>
+    <string name="rang_points">Очки ранга:</string>
+
+
+    //Регистрация
+    <string name="welcome">Добро пожаловать в Chess</string>
+    <string name="registration_title">Регистрация</string>
+    <string name="nickname">Никнейм</string>
+    <string name="email">Почта</string>
+    <string name="password">Пароль</string>
+    <string name="have_account"><u>уже есть аккаунт?</u></string>
+    <string name="registration">Зарегистрироваться</string>
+
+
+    //Авторизация
+    <string name="autorization_title">Авторизация</string>
+    <string name="havent_account"><u>еще нет аккаунта?</u></string>
+    <string name="autorize">Войти</string>
+    <string name="title_activity_chess">ChessActivity</string>
+
+
+    // game
+    <string name="stop">закончить</string>
+    <string name="steps">Ходы</string>
+    <string name="player">игрок</string>
+    <string name="step">ход</string>
+    <string name="step_time">время хода</string>
+    <string name="points">очки:\u0020</string>
+    <string name="destroyed">повержено:\u0020</string>
+    <string name="get_player">Принять в игру</string>
+    <string name="game_id">ID игры:\u0020</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="your_color">Ваш цвет:\u0020</string>
+
+
+    // Архив
+    <string name="archive_games">Архив игр</string>
+
+
+</resources>
